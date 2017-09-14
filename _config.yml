@@ -1,6 +1,7 @@
-title: Easy GitHub Pages
+name: Amir Ariffin
 
-baseurl: ""
+use:
+  bootstrap_4: true
 
 exclude:
   - Gemfile
