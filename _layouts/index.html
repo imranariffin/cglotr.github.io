@@ -2,33 +2,107 @@
 <html>
 <head>
   <title>{{ site.name }}</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
-<body>
+<body id="my-body">
   {% include navbar.html %}
 
-  <div class="container">
-    <section class="todo-red-block"></section>
-
-    <section id="timeline">
-      <div>
-        <ul>
-          {% for t in site.timeline %}
-            <li>
-              <div class="timeline-badge">badge</div>
-              <div class="timeline-panel">panel</div>
-            </li>
-          {% endfor %}
-        </ul>
+  <div id="my-main-container" class="container">
+    <section id="my-profile">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="text-center">
+            <img id="profile_img" class="img-thumbnail img-circle"
+              height="200px" width="200px"
+              src="{{ site.profile_img_url }}">
+            <h1>{{ site.name }}</h1>
+            <p>{{ site.headline }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <div id="my-social" class="flex-container">
+            {% for s in site.social %}
+              <a class="flex-item"
+                href="{{ s.social_link }}"
+                target="_blank">
+                <i class="fa fa-{{ s.social_type }} fa-2x" aria-hidden="true"></i>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="todo-red-block"></section>
+    <section id="my-timeline">
+      <h2>Timeline</h2>
+      <div class="timeline">
+        {% for t in site.timeline %}
+          <div class="t-item">
+            <div class="t-badge">
+              <i class="fa fa-{{ t.badge }} fa-2x" aria-hidden="true"></i>
+            </div>
+            <div class="{% cycle 't-content', 't-content-inverted' %}">
+              <div>
+                <h3>{{ t.title }}</h3>
+                <p>{{ t.when }}</p>
+                <p>{{ t.where }}</p>
+                <ul>
+                  {% for d in t.description %}
+                    <li>{{ d }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="my-project">
+      <div>
+        <h2>Projects</h2>
+        <div class="row">
+          {% for project in site.projects %}
+            <div class="col-md-4 project">
+              <div>
+                <img src="/images/default_project.png" alt="..." class="img-thumbnail"
+                  height="100px" width="100px">
+                <h3>{{ project.title }}</h3>
+                <ul>
+                  {% for d in project.description %}
+                    <li>{{ d }}</li>
+                  {% endfor %}
+                </ul>
+                <div class="tags">
+                  {% for tag in project.tags %}
+                    <div class="badge">{{ tag }}</div>
+                  {% endfor %}
+                </div>
+                <div class="links">
+                  <a href="{{ project.view_url }}" class="btn btn-default">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                    <span>View project</span>
+                  </a>
+                  <a href="{{ project.code_url }}" class="btn btn-default">
+                    <i class="fa fa-code" aria-hidden="true"></i>
+                    <span>View code</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
   </div>
 
+  {% include footer.html %}
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://use.fontawesome.com/c2d84be026.js"></script>
 </body>
 </html>

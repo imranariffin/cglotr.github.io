@@ -1,7 +1,11 @@
 name: Amir Ariffin
+headline: Software Engineer & Full Stack Developer
+profile_img_url: https://avatars3.githubusercontent.com/u/22372978?v=4&s=460
 
 collections:
   - timeline
+  - social
+  - projects
 
 exclude:
   - Gemfile

@@ -1,0 +1,66 @@
+$my-navbar-height: 6rem;
+
+#my-navbar {
+  height: $my-navbar-height;
+}
+
+#my-main-container {
+  padding-top: $my-navbar-height;
+}
+
+#my-profile {
+  // padding-top: 5vh;
+  height: 100vh;
+  content: " ";
+}
+
+#profile-img {
+}
+
+.flex-container {
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  flex: initial;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+h1, h2, h3, p, div {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 7rem;
+}
+
+h2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+p, div {
+  font-size: 2rem;
+}
+
+section {
+  padding-top: $my-navbar-height;
+  padding-bottom: 30vh;
+}
+
+#my-body {
+  background-color: rgba(230, 230, 230, 0.3);
+}
