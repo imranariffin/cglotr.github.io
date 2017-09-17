@@ -44,9 +44,10 @@ $color-bg-soft: rgba(240, 240, 240, 1);
     %t-content {
       width: $t-content-width;
       flex: initial;
-      border: 0.2rem solid rgba(0, 0, 0, 0.5);
+      // border: 0.2rem solid rgba(0, 0, 0, 0.5);
       padding: 1rem 3rem;
-      border-radius: 1rem;
+      // border-radius: 1rem;
+      @include shadow-box;
     }
 
     .t-content {

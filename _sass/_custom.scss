@@ -17,6 +17,15 @@ $my-navbar-height: 6rem;
 #profile-img {
 }
 
+#my-project {
+  display: inline flex;
+  align-content: center;
+
+  .row {
+    flex: initial;
+  }
+}
+
 .flex-container {
   display: flex;
   align-content: flex-start;

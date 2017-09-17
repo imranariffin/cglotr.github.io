@@ -62,35 +62,42 @@
     </section>
 
     <section id="my-project">
-      <div>
-        <h2>Projects</h2>
+      <h2>Projects</h2>
+      <div class="projects">
         <div class="row">
           {% for project in site.projects %}
-            <div class="col-md-4 project">
-              <div>
-                <img src="/images/default_project.png" alt="..." class="img-thumbnail"
-                  height="100px" width="100px">
-                <h3>{{ project.title }}</h3>
-                <ul>
-                  {% for d in project.description %}
-                    <li>{{ d }}</li>
-                  {% endfor %}
+            <div class="col-md-4">
+              <div class="project">
+                <div class="main-container">
+                  <img src="/images/default_project.png" alt="..."
+                    class="img-thumbnail"
+                    height="100px" width="100px">
+                  <h3 class="title">{{ project.title }}</h3>
+                  <ul class="descriptions">
+                    {% for d in project.description %}
+                      <li class="description">{{ d }}</li>
+                    {% endfor %}
+                  </ul>
+                  <ul class="tags">
+                    {% for tag in project.tags %}
+                      <li class="tag badge">{{ tag }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                <ul class="buttons">
+                  <li class="button">
+                    <a href="{{ project.view_url }}" class="btn btn-default">
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                      <span>View project</span>
+                    </a>
+                  </li>
+                  <li class="button">
+                    <a href="{{ project.code_url }}" class="btn btn-default">
+                      <i class="fa fa-code" aria-hidden="true"></i>
+                      <span>View code</span>
+                    </a>
+                  </li>
                 </ul>
-                <div class="tags">
-                  {% for tag in project.tags %}
-                    <div class="badge">{{ tag }}</div>
-                  {% endfor %}
-                </div>
-                <div class="links">
-                  <a href="{{ project.view_url }}" class="btn btn-default">
-                    <i class="fa fa-eye" aria-hidden="true"></i>
-                    <span>View project</span>
-                  </a>
-                  <a href="{{ project.code_url }}" class="btn btn-default">
-                    <i class="fa fa-code" aria-hidden="true"></i>
-                    <span>View code</span>
-                  </a>
-                </div>
               </div>
             </div>
           {% endfor %}
