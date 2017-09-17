@@ -1,0 +1,52 @@
+<div class="container">
+  <section id="my-profile">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="text-center">
+          <img id="profile_img" class="img-thumbnail img-circle"
+            height="200px" width="200px"
+            src="{{ site.profile_img_url }}">
+          <h1>{{ site.name }}</h1>
+          <p>{{ site.headline }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <div id="my-social" class="flex-container">
+          {% for s in site.social %}
+            <a class="flex-item"
+              href="{{ s.social_link }}"
+              target="_blank">
+              <i class="fa fa-{{ s.social_type }} fa-2x" aria-hidden="true"></i>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="my-timeline">
+    <h2>Timeline</h2>
+    <div class="timeline">
+      <div class="times">
+        {% for time in site.timeline %}
+          {% include time.html content=time%}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="my-project">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="row">
+        {% for project in site.projects %}
+          <div class="col-md-4">
+            {% include project.html content=project %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
