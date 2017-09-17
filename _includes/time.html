@@ -1,0 +1,17 @@
+<div class="time">
+  <div class="time-badge">
+    <i class="fa fa-{{ include.content.badge }} fa-2x" aria-hidden="true"></i>
+  </div>
+  <div class="content {% cycle '', 'inverted' %}">
+    <div>
+      <h3>{{ include.content.title }}</h3>
+      <p>{{ include.content.when }}</p>
+      <p>{{ include.content.where }}</p>
+      <ul>
+        {% for description in include.content.description %}
+          <li>{{ description }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

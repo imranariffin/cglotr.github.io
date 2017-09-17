@@ -39,25 +39,11 @@
     <section id="my-timeline">
       <h2>Timeline</h2>
       <div class="timeline">
-        {% for t in site.timeline %}
-          <div class="t-item">
-            <div class="t-badge">
-              <i class="fa fa-{{ t.badge }} fa-2x" aria-hidden="true"></i>
-            </div>
-            <div class="{% cycle 't-content', 't-content-inverted' %}">
-              <div>
-                <h3>{{ t.title }}</h3>
-                <p>{{ t.when }}</p>
-                <p>{{ t.where }}</p>
-                <ul>
-                  {% for d in t.description %}
-                    <li>{{ d }}</li>
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
+        <div class="times">
+          {% for time in site.timeline %}
+            {% include time.html content=time%}
+          {% endfor %}
+        </div>
       </div>
     </section>
 
