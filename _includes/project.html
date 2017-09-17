@@ -1,0 +1,32 @@
+<div class="project">
+  <div class="main-container">
+    <img src="/images/default_project.png" alt="..."
+      class="img-thumbnail"
+      height="100px" width="100px">
+    <h3 class="title">{{ include.content.title }}</h3>
+    <ul class="descriptions">
+      {% for d in include.content.description %}
+        <li class="description">{{ d }}</li>
+      {% endfor %}
+    </ul>
+    <ul class="tags">
+      {% for tag in include.content.tags %}
+        <li class="tag badge">{{ tag }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <ul class="buttons">
+    <li class="button">
+      <a href="{{ include.content.view_url }}" class="btn btn-default">
+        <i class="fa fa-eye" aria-hidden="true"></i>
+        <span>View project</span>
+      </a>
+    </li>
+    <li class="button">
+      <a href="{{ include.content.code_url }}" class="btn btn-default">
+        <i class="fa fa-code" aria-hidden="true"></i>
+        <span>View code</span>
+      </a>
+    </li>
+  </ul>
+</div>

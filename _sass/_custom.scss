@@ -18,11 +18,11 @@ $my-navbar-height: 6rem;
 }
 
 #my-project {
-  display: inline flex;
-  align-content: center;
-
-  .row {
-    flex: initial;
+  .projects {
+    padding: 1rem;
+    margin: 1rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
