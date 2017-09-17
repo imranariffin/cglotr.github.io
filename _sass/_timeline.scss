@@ -26,10 +26,9 @@
         display: flex;
         align-items: center;
         align-content: center;
-        z-index: 101;
+        z-index: 102;
         left: 4rem;
         transform: translate(-50%, 0);
-        // color: $red;
 
         .fa {
           margin-left: auto;
@@ -44,9 +43,33 @@
         padding: 1rem 3rem;
         margin: 2rem 0 2rem 0;
         margin-left: 7rem;
+        position: absolute;
+
+        .descriptions {
+          padding-left: 2rem;
+
+          .description {
+            padding: 0.5rem 0 0.5rem 0;
+          }
+        }
       }
 
-      .inverted {
+      .content-inverted {
+      }
+
+      .year {
+        position: absolute;
+        z-index: 101;
+        display: none;
+        font-size: 2rem;
+
+        > p {
+          padding: 0;
+          margin: 0;
+        }
+      }
+
+      .year-inverted {
       }
     }
   }
@@ -71,8 +94,6 @@
   .timeline {
     .times {
       .time {
-        $offset: 3%;
-
         .time-badge {
           left: 50%;
           transform: translate(-50%, 0);
@@ -82,12 +103,24 @@
         }
 
         .content {
-          margin-left: 50% + $offset;
+          left: 50%;
+          margin: 0;
+          width: 42rem;
+          transform: translate(calc(-50% + 30rem), 0);
         }
 
-        .inverted {
-          margin-left: 0%;
-          margin-right: 50% + $offset;
+        .content-inverted {
+          transform: translate(calc(-50% - 30rem), 0);
+        }
+
+        .year {
+          display: inline;
+          left: calc(50% - 14rem);
+          transform: translate(-50%, 0);
+        }
+
+        .year-inverted {
+          left: calc(50% + 14rem);
         }
       }
     }

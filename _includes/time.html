@@ -2,16 +2,19 @@
   <div class="time-badge">
     <i class="fa fa-{{ include.content.badge }} fa-2x" aria-hidden="true"></i>
   </div>
-  <div class="content {% cycle '', 'inverted' %}">
+  <div class="content {% cycle '', 'content-inverted' %}">
     <div>
       <h3>{{ include.content.title }}</h3>
-      <p>{{ include.content.when }}</p>
+      <p>{{ include.content.year_from }} - {{ include.content.year_to }}</p>
       <p>{{ include.content.where }}</p>
-      <ul>
+      <ul class="descriptions">
         {% for description in include.content.description %}
-          <li>{{ description }}</li>
+          <li class="description">{{ description }}</li>
         {% endfor %}
       </ul>
     </div>
+  </div>
+  <div class="year {% cycle '', 'year-inverted' %}">
+    <p>{{ include.content.year_from }} - {{ include.content.year_to }}</p>
   </div>
 </div>
