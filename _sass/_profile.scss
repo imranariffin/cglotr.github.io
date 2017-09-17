@@ -1,0 +1,30 @@
+@import "colors";
+
+.profile {
+  padding-top: 10vh;
+  height: 100vh;
+
+  .name {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .img-thumbnail {
+    border-radius: 40%;
+  }
+
+  .socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+    .social {
+      flex: initial;
+      padding: 1rem;
+
+      .link {
+        color: $red;
+      }
+    }
+  }
+}

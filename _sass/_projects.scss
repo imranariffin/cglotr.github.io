@@ -1,4 +1,5 @@
 @import "mixins";
+@import "colors";
 
 .projects {
   .project {
@@ -54,6 +55,10 @@
           flex: initial;
           margin-left: 0.2rem;
           margin-right: 0.2rem;
+        }
+
+        .badge {
+          background-color: $red;
         }
       }
     }

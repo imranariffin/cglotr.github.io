@@ -1,0 +1,20 @@
+.navbar {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.8);
+
+  .container {
+    flex: auto;
+    display: flex;
+    align-items: center;
+
+    .navbar-header {
+      flex: auto;
+      margin-left: 10vw;
+    }
+
+    .collapse {
+      flex: auto;
+      margin-right: 10vw;
+    }
+  }
+}
