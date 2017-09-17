@@ -17,13 +17,21 @@
   </div>
   <ul class="buttons">
     <li class="button">
-      <a href="{{ include.content.view_url }}" class="btn btn-default">
+      <a href="{{ include.content.view_url }}" class="btn btn-default"
+        {% if include.content.view_url == "" %}
+          disabled="true"
+        {% endif %}
+        target="_blank">
         <i class="fa fa-eye" aria-hidden="true"></i>
         <span>View project</span>
       </a>
     </li>
     <li class="button">
-      <a href="{{ include.content.code_url }}" class="btn btn-default">
+      <a href="{{ include.content.code_url }}" class="btn btn-default"
+        {% if include.content.view_url == "" %}
+          disabled="true"
+        {% endif %}
+        target="_blank">
         <i class="fa fa-code" aria-hidden="true"></i>
         <span>View code</span>
       </a>

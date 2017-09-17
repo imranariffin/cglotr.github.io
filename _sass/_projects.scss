@@ -81,4 +81,8 @@
       }
     }
   }
+
+  .project:hover {
+    @include select-box;
+  }
 }

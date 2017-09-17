@@ -1,4 +1,5 @@
 @import "colors";
+@import "mixins";
 
 .profile {
   padding-top: 10vh;
@@ -11,6 +12,11 @@
 
   .img-thumbnail {
     border-radius: 40%;
+  }
+
+  .img-thumbnail:hover {
+    @include shadow-box;
+    @include select-box;
   }
 
   .socials {
