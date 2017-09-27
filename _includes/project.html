@@ -9,11 +9,11 @@
         <li class="description">{{ d }}</li>
       {% endfor %}
     </ul>
-    <ul class="tags">
+    <div class="tags" style="display: flex; flex-wrap: wrap;">
       {% for tag in include.content.tags %}
-        <li class="tag badge">{{ tag }}</li>
+        <div class="tag badge" style="display: initial; margin: 0.2rem;">{{ tag }}</div>
       {% endfor %}
-    </ul>
+    </div>
   </div>
   <ul class="buttons">
     <li class="button">
